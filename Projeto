@@ -1,0 +1,7 @@
+14 de Setembro:
+
+	20:32 - Adição do campo 'qtdDispo' na struct 'ListaCalendario' em tratamento.h
+		(Facilitar a futura exibição na tela, para que possa ser usado como
+			limite em 'for' ou 'while')
+
+	21:01 - Adição da função 'leArquivo2' em leitura.h
