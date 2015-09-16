@@ -1,4 +1,3 @@
-
 /* Armazena os dados do arquivo 'palestrantes.txt'
  * numa lista do tipo 'ArmazenaDispo'
  */
