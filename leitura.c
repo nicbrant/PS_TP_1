@@ -6,7 +6,7 @@
 * numa lista do tipo 'ArmazenaDispo'
 */
 
-ArmazenaDispo* leArquivo1(FILE *arquivo) {
+ArmazenaDispo leArquivo1(FILE *arquivo) {
 	char palavra[1000];
 	ArmazenaDispo *atual = (ArmazenaDispo*) malloc(sizeof(ArmazenaDispo));
 	ArmazenaDispo *prim;
@@ -15,7 +15,6 @@ ArmazenaDispo* leArquivo1(FILE *arquivo) {
 	}
 	prim = atual;
 	while (fscanf(arquivo, "%s", palavra) != EOF) {
-		fscanf(arquivo, "%s", palavra);
 		if (!strcmp(palavra, "Nome:")) {
 			fscanf(arquivo, "%[^/n]", atual->nomePalestrante);
 		}
@@ -27,13 +26,13 @@ ArmazenaDispo* leArquivo1(FILE *arquivo) {
 				exit(2016);
 		}
 	}
-	return &prim;
+	return prim;
 }
 
 /* Armazena os dados do arquivo 'palestras.txt'
 * numa lista do tipo 'ArmazenaPalestra'
 */
-ArmazenaPalestra* leArquivo2(FILE *arquivo) {
+ArmazenaPalestra leArquivo2(FILE *arquivo) {
 	char palavra[1000];
 	ArmazenaPalestra *atual = (ArmazenaPalestra*)malloc(sizeof(ArmazenaPalestra));
 	ArmazenaPalestra *prim;
@@ -42,7 +41,6 @@ ArmazenaPalestra* leArquivo2(FILE *arquivo) {
 	}
 	prim = atual;
 	while (fscanf(arquivo, "%s", palavra) != EOF) {
-		fscanf(arquivo, "%s", palavra);
 		if (!strcmp(palavra, "Nome:")) {
 			fscanf(arquivo, "%[^/n]", atual->nomePalestra);
 		}
@@ -63,5 +61,5 @@ ArmazenaPalestra* leArquivo2(FILE *arquivo) {
 				exit(2018);
 		}
 	}
-	return &prim;
+	return prim;
 }
