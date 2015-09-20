@@ -2,9 +2,9 @@
  * numa lista do tipo 'ArmazenaDispo'
  */
 
-ArmazenaDispo* leArquivo1(FILE *arquivo1);
+ArmazenaDispo leArquivo1(FILE *arquivo);
 
 /* Armazena os dados do arquivo 'palestras.txt'
  * numa lista do tipo 'ArmazenaPalestra'
  */
-ArmazenaPalestra* leArquivo2(FILE *arquivo2);
+ArmazenaPalestra leArquivo2(FILE *arquivo);
