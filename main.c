@@ -64,12 +64,11 @@ int main()
 	/*
 	TESTE SEM ERRO:
 		Imprime os dados do calendário ainda sem o local.
-		
+
 	ListaCalendario *l;
 	for (l = calendario; l != NULL; l=l->prox)
-	 printf("%d:%d %d:%d %d/%d/%d %d %s %s\n", l->horaInicio, l->minutoInicio, l->horaFim, l->minutoFim, l->disponibilidade.dia, l->disponibilidade.mes, l->disponibilidade.ano, l->diaSemana, l->nomePalestra, l->nomePalestrante);
+	 printf("%d:%d %d:%d %d/%d/%d %d %s %s\n\n", l->horaInicio, l->minutoInicio, l->horaFim, l->minutoFim, l->disponibilidade.dia, l->disponibilidade.mes, l->disponibilidade.ano, l->diaSemana, l->nomePalestra, l->nomePalestrante);
 	*/
-
 
 	/* Libera a memória usada pelas estruturas que (agora) são inúteis */
 	desalocaListaPalestrantes(listaPalestrantes);
@@ -77,7 +76,10 @@ int main()
 
 	/* Ordena o calendário de acordo com a data e hora */
 	ordenaListaTratada(calendario);
-
+	ListaCalendario *l2;
+	for (l2 = calendario; l2 != NULL; l2=l2->prox)
+	 printf("%d:%d %d:%d %d/%d/%d %d %s %s\n", l2->horaInicio, l2->minutoInicio, l2->horaFim, l2->minutoFim, l2->disponibilidade.dia, l2->disponibilidade.mes, l2->disponibilidade.ano, l2->diaSemana, l2->nomePalestra, l2->nomePalestrante);
+	
 	/* Atribui um local para cada elemento do calendário */ 
 	calendario = alocaLocal(calendario, local);
 
