@@ -1,5 +1,6 @@
 #include<stdio.h>
-
+#include"leitura.h"
+#include"listas.h"
 /* O trabalho será implementado nas seguintes etapas:
 
 1°Etapa:	Será lido os dados do arquivo 'palestrantes.txt' e cada informação será 
@@ -42,6 +43,23 @@
 */
 int main()
 {
-	/*CODE*/
+	ListaParaArquivo1 *lista1 = CriaLista1();
+	ListaParaArquivo2 *lista2 = CriaLista2();
+	VerificaCriacao(lista1, lista2);
+	FILE *arquivo1 = fopen("palestrantes.txt", "r");
+	if (!arquivo1) {
+		exit(2027);
+	}
+	lista1->info = leArquivo1(arquivo1);
+	fclose(arquivo1);
+	FILE *arquivo2 = fopen("palestras.txt", "r");
+	if (!arquivo2) {
+		exit(2028);
+	}
+	lista1->info = leArquivo1(arquivo2);
+	fclose(arquivo2);
+	/*code*/
+	DesalocaLista1(lista1);
+	DesalocaLista2(lista2);
 return 0;
 }
