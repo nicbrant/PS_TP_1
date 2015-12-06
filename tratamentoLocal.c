@@ -105,6 +105,9 @@ ListaCalendario* alocaLocal(ListaCalendario *calendario, Localidade *lugar)
 	ListaCalendario *calenTemp = NULL;
 	Localidade *localTemp = NULL;
 
+	for (calenTemp = calendario; calenTemp != NULL; calenTemp = calenTemp->prox)
+		calenTemp->local = NULL;
+
 	for (calenTemp = calendario; calenTemp != NULL  ; calenTemp = calenTemp->prox)
 	{
 		calenTemp->local = NULL;

@@ -1,7 +1,11 @@
 Nome: Sala 01
 Endereco: PAT 0987
-Disponibilidade: Qui, 01/09/2015, 10:15-11:45; Seg, 19/10/2015, 09:00-10:30.
+Disponibilidade: Qui, 01/09/2015, 10:15-11:45; Seg, 19/10/2015, 09:00-14:30.
 
 Nome: Anfiteatro A
 Endereco: CIC/EST - UnB
-Disponibilidade: Ter, 01/09/2015, 08:00-09:30; Seg, 12/10/2015, 14:00-16:30.
+Disponibilidade: Ter, 01/09/2015, 09:00-13:00; Seg, 12/10/2015, 14:00-16:30.
+
+Nome: Sala Multiuso
+Endereco: CIC/EST - UnB
+Disponibilidade: Qui, 03/09/2015, 07:00-09:30;
