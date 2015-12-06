@@ -1,58 +1,95 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include"leitura.h"
+#include"tratamento.h"
+#include"listaLocal.h"
+#include"listaPalestra.h"
+#include"leituraPalestrante.h"
 
-ListaCalendario *criaListaTratada(ArmazenaDispo *ant, ArmazenaPalestra  *listaArquivo2)
+/* Cria um calendário com os dados dos palestrantes e dos horários de palestras. */
+/* Une os dados de listaPalestrante e listaPalestras em um único conjunto, o calendário. */
+
+ListaCalendario *criaListaTratada(ArmazenaDispo *listaArquivo1, ArmazenaPalestra  *listaArquivo2)
 {
-	ListaCalendario *nova = NULL;
-	ArmazenaDispo *temp = ant;
-	char dispoTemp;
+	ListaCalendario *nova, *prim = NULL;
+	ArmazenaDispo *tempDispo = listaArquivo1;
+	ArmazenaPalestra *tempPalestra = listaArquivo2;
+	char dispoTemp[1000];
 	int i;
-
-	/*Copia dados da lista anterior para a nova com os dados organizados */
-	for (temp = ant; temp != NULL; temp = temp->prox)
+	
+	for (tempDispo = listaArquivo1, tempPalestra = listaArquivo2 ; tempDispo != NULL ; tempDispo = tempDispo->prox, tempPalestra = tempPalestra->prox)
 	{
-		dispoTemp = temp->dispo;
-		/*Copia a data e hora para os campos numéricos da nova lista. Observe a conversão de char para int. */
-		for (i=0; strlen(dispoTemp) <= i; i+=30)
+		strcpy(dispoTemp, tempDispo->dispo);
+		i = 1;
+		while(i < strlen(dispoTemp))
 		{
-			ListaCalendario *endTemp = nova;
-			nova = (ListaCalendario*) malloc(sizeof(ListaCalendario));
+			nova = (ListaCalendario *) malloc(sizeof(ListaCalendario));
 
-			/*Armazena tema, local e duração (em segundos) */
-			strcpy(nova->temaPalestra, listaArquivo2->tema);
-			strcpy(nova->local, listaArquivo2->local);
-			nova->duracao = listaArquivo2->duracao;
+			// Atribui dia da semana de forma numérica
+			nova->diaSemana = atribuiSemana(dispoTemp+i);
 
-			/*Transfere nome do palestrante*/
-			strcpy(nova->nomePalestrante, temp->nomePalestrante);	
-			/*Alocação da data*/
-			nova->disponibilidade->dia = (dispoTemp[i+5]-48)*10 + (dispoTemp[i+6]-48);
-			nova->disponibilidade->mes = (dispoTemp[i+8]-48)*10 + (dispoTemp[i+9]-48);
-			nova->disponibilidade->ano = (dispoTemp[i+11]-48)*1000 + (dispoTemp[i+12]-48)*100 + (dispoTemp[i+13]-48)*10 + (dispoTemp[i+14]-48);
-			/*Alocação da hora */
-			nova->horaInicio = (dispoTemp[i+17]-48)*60 + (dispoTemp[i+18]-48);
-			nova->minutoInicio = (dispoTemp[i+17]-48)*60 + (dispoTemp[i+18]-48);
-			nova->horaFim = (dispoTemp[i+20]-48)*60 + (dispoTemp[i+21]-48);
-			nova->minutoFim = (dispoTemp[i+23]-48)*60 + (dispoTemp[i+24]-48);
+			/*Adiciona informações do palestrante*/
+			strcpy(nova->nomePalestrante, tempPalestra->nomePessoa);
+			strcpy(nova->nomePalestra, tempPalestra->nomePalestra);
+			strcpy(nova->tema, tempPalestra->tema);
+			strcpy(nova->lugar, tempPalestra->local);
+			strcpy(nova->duracao, tempPalestra->duracao);
 
-			/*Faz novo endereço apontar para o anterior*/
-			nova->prox = endTemp;
+			if (dispoTemp[i+7] == '/')
+			{
+				/*Altera dia para numerico */
+				nova->disponibilidade.dia = (dispoTemp[i+5]-48)*10+(dispoTemp[i+6]-48);
+				nova->disponibilidade.mes = (dispoTemp[i+8]-48)*10+(dispoTemp[i+9]-48);
+				nova->disponibilidade.ano = (dispoTemp[i+11]-48)*1000+(dispoTemp[i+12]-48)*100+(dispoTemp[i+13]-48)*10+(dispoTemp[i+14]-48);
+			
+				/*Horas de inicio e fim para numéricos */
+				nova->horaInicio = (dispoTemp[i+17]-48)*10+(dispoTemp[i+18]-48);
+				nova->minutoInicio = (dispoTemp[i+20]-48)*10+(dispoTemp[i+21]-48);
+				nova->horaFim = (dispoTemp[i+23]-48)*10+(dispoTemp[i+24]-48);
+				nova->minutoFim = (dispoTemp[i+26]-48)*10+(dispoTemp[i+27]-48);
+
+				i += 30;
+			}
+			else
+			{
+
+				/*Altera dia para numerico */
+				nova->disponibilidade.dia = 0;
+				nova->disponibilidade.mes = 0;
+				nova->disponibilidade.ano = 0;
+
+				/*Horas de inicio e fim para numéricos */
+				nova->horaInicio = (dispoTemp[i+5]-48)*10+(dispoTemp[i+6]-48);
+				nova->minutoInicio = (dispoTemp[i+8]-48)*10+(dispoTemp[i+9]-48);
+				nova->horaFim = (dispoTemp[i+11]-48)*10+(dispoTemp[i+12]-48);
+				nova->minutoFim = (dispoTemp[i+14]-48)*10+(dispoTemp[i+15]-48);
+			
+				i += 18;
+			}
+			
+			nova->prox = prim;
+			prim = nova;
 		}
 	}
-	liberaListaArquivo1(ant);
-	liberaListaArquivo2(listaArquivo2);
 
+	return prim;
 
-	return nova;
 }
 
-void liberaListaArquivo1(ArmazenDispo *lista)
+int atribuiSemana(char *dia)
 {
-	/*libera a lista que armazena palestras.txt*/
-}
-void liberaListaArquivo2(ArmazenaPalestra *lista)
-{
-	/*libera a lista que armazena palestrantes.txt*/
+	if (!strncmp(dia, "Dom", 3))
+		return 1;
+	else if (!strncmp(dia, "Seg", 3))
+		return 2;
+	else if (!strncmp(dia, "Ter", 3))
+		return 3;
+	else if (!strncmp(dia, "Qua", 3))
+		return 4;
+	else if (!strncmp(dia, "Qui", 3))
+		return 5;
+	else if (!strncmp(dia, "Sex", 3))
+		return 6;
+	else if (!strncmp(dia, "Sab", 3) || strncmp(dia, "Sáb", 3))
+		return 7;
 }
