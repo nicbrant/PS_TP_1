@@ -39,27 +39,18 @@ void ordenaListaTratada(ListaCalendario *c)
 				swapDadosLista(temp2, temp2->prox);
 				continue;
 			}
-			if (temp2->disponibilidade.mes > temp2->prox->disponibilidade.mes)
-			{
-				swapDadosLista(temp2, temp2->prox);
-				continue;
-			}
-
-			if (temp2->disponibilidade.dia > temp2->prox->disponibilidade.dia)
-			{
-				swapDadosLista(temp2, temp2->prox);
-				continue;
-			}
-			if (temp2->horaInicio > temp2->prox->horaInicio)
-			{
-				swapDadosLista(temp2, temp2->prox);
-				continue;
-			}
-			if (temp2->minutoInicio > temp2->prox->minutoInicio)
-			{
-				swapDadosLista(temp2, temp2->prox);
-				continue;
-			}
+			else if (temp2->disponibilidade.ano == temp2->prox->disponibilidade.ano)
+				if (temp2->disponibilidade.mes > temp2->prox->disponibilidade.mes)
+				{
+					swapDadosLista(temp2, temp2->prox);
+					continue;
+				}
+				else if (temp2->disponibilidade.mes == temp2->prox->disponibilidade.mes)
+					if (temp2->disponibilidade.dia > temp2->prox->disponibilidade.dia)
+					{
+						swapDadosLista(temp2, temp2->prox);
+						continue;
+					}
 		}
 	}
 }

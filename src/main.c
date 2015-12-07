@@ -57,7 +57,7 @@ int main()
 
 	/* Ordena o calendário de acordo com a data e hora */
 	ordenaListaTratada(calendario);
-		
+	
 	/* Atribui um local para cada elemento do calendário */ 
 	calendario = alocaLocal(calendario, local);
 

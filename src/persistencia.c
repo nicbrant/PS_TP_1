@@ -104,9 +104,9 @@ void imprimeDiaCalendario(ListaCalendario *c, FILE *arquivo)
 	scanf(" %d %d %d", &dia, &mes, &ano);
 
 	fprintf(arquivo, "Eventos para o dia %d/%d/%d: \n\n", dia, mes, ano);
-	while (l->disponibilidade.dia != dia && l->disponibilidade.mes != mes && l->disponibilidade.ano != ano)
+	while (l != NULL && l->disponibilidade.dia != dia && l->disponibilidade.mes != mes && l->disponibilidade.ano != ano)
 		l = l->prox;
-	while (l->disponibilidade.dia == dia && l->disponibilidade.mes == mes && l->disponibilidade.ano == ano)
+	while (l != NULL && l->disponibilidade.dia == dia && l->disponibilidade.mes == mes && l->disponibilidade.ano == ano)
 	{
 		imprimeLocal(l, arquivo);
 		existe = 1;
@@ -131,7 +131,7 @@ void imprimeCalendarioDeAB(ListaCalendario *c, FILE *arquivo)
 	scanf(" %d %d", &mesInicio, &anoInicio);
 
 	ListaCalendario *l = c;
-	while (l->disponibilidade.mes < mesInicio && l->disponibilidade.ano < anoInicio)
+	while (l->disponibilidade.mes < mesInicio || l->disponibilidade.ano < anoInicio)
 		l = l->prox;
 	system("clear");
 	imprimeTodoCalendario(l, arquivo);
