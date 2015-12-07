@@ -8,4 +8,12 @@ Disponibilidade: Ter, 01/09/2015, 09:00-13:00; Seg, 12/10/2015, 14:00-16:30.
 
 Nome: Sala Multiuso
 Endereco: CIC/EST - UnB
-Disponibilidade: Qui, 03/09/2015, 07:00-09:30;
+Disponibilidade: Qui, 03/09/2015, 07:00-09:30; Qua, 02/03/2016, 10:00-14:00.
+
+Nome: Sala 090
+Endereco: PJC 0455
+Disponiblidade: Seg, 28/12/2015, 14:00-17:30; Seg, 19/11/2015, 12:00-13:55.
+
+Nome: BT-120
+Endereco: BSAS
+Disponibilidade: Qua, 02/03/2016, 10:00-14:00.

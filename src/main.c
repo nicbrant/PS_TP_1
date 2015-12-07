@@ -48,28 +48,8 @@ int main()
 	local = converteLocalStrInt(lugarStr);
 	fclose(arquivoLocais);
 
-	/*
-	TESTE E ERRO: QUANDO VAMOS IMPRIMIR TODOS OS LOCAIS. APÓS IMPRIMIR O ULTIMO DÁ SEG. FAULT
-				SOLUÇÃO TEMPORÀRIA E ERRADA: imprimir até local->prox != NULL.
-	Se a mensagem final for impressa, o erro não existe mais.
-	
-	Localidade *l;
-	for (l = local; l->prox != NULL; l=l->prox)
-	 printf("%d:%d %d:%d %d/%d/%d %s\n", l->horaInicio, l->minutoInicio, l->horaFim, l->minutoFim, l->dia, l->mes, l->ano, l->sala);
-	printf("Percorreu os locais perfeitamente.\n\n ");
-	*/
-
 	/* Trata a as informações coletadas dos arquivos e atribui ao calendário */
 	calendario = criaListaTratada(listaPalestrantes, listaPalestras);
-
-	/*
-	TESTE SEM ERRO:
-		Imprime os dados do calendário ainda sem o local.
-
-	ListaCalendario *l;
-	for (l = calendario; l != NULL; l=l->prox)
-	 printf("%d:%d %d:%d %d/%d/%d %d %s %s\n\n", l->horaInicio, l->minutoInicio, l->horaFim, l->minutoFim, l->disponibilidade.dia, l->disponibilidade.mes, l->disponibilidade.ano, l->diaSemana, l->nomePalestra, l->nomePalestrante);
-	*/
 
 	/* Libera a memória usada pelas estruturas que (agora) são inúteis */
 	desalocaListaPalestrantes(listaPalestrantes);
@@ -77,34 +57,12 @@ int main()
 
 	/* Ordena o calendário de acordo com a data e hora */
 	ordenaListaTratada(calendario);
-	
+		
 	/* Atribui um local para cada elemento do calendário */ 
 	calendario = alocaLocal(calendario, local);
 
-	printf("Alocou os locais no calendário!\n");
-
-	/* TESTE PARA VERIFICAR SE OS LOCAIS FORAM REALMENTE ALOCADOS COMO DEVERIA.
-	TESTE SEM ERRO:
-		Se existeLocal == 1, o lugar foi alocado e imprime o local da palestra, caso contrário imprime
-		'local a designar'.
-
-	ListaCalendario *l;
-	for (l = calendario; l != NULL; l=l->prox)
-		if (l->existeLocal == 1)
-	 printf("%d:%d %d:%d %d/%d/%d %d %s %s\n%s %s\n\n", l->horaInicio, l->minutoInicio, l->horaFim, l->minutoFim, l->disponibilidade.dia, l->disponibilidade.mes, l->disponibilidade.ano, l->diaSemana, l->nomePalestra, l->nomePalestrante, l->local->sala, l->local->endereco);
-		else
-			printf("%d:%d %d:%d %d/%d/%d %d %s %s\n%s\n\n", l->horaInicio, l->minutoInicio, l->horaFim, l->minutoFim, l->disponibilidade.dia, l->disponibilidade.mes, l->disponibilidade.ano, l->diaSemana, l->nomePalestra, l->nomePalestrante, " Local a definir\n");
-	/*
-
-
-	/* Abre o arquivo de saída */
-	FILE *arquivoFinal = fopen("calendario.txt", "w+");
-	verificaAbertura(arquivoFinal);
-
-	/* Grava o calendário no arquivo de saída */
-	imprimeCalendario(calendario, arquivoFinal);
-
-	fclose(arquivoFinal);
+	/* Grava o calendário em um arquivo de saída */
+	imprimeCalendario(calendario);
 
 return 0;
 }

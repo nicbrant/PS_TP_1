@@ -1,0 +1,8 @@
+Nome: Homero Picolo
+Disponibilidade: Ter, 01/09/2015, 10:00-12:00; Seg, 19/11/2015, 12:00-13:55.
+Nome: Guilherme Novaes Ramos
+Disponibilidade: Dom, 12:00-14:00; Qui, 03/09/2015, 07:00-09:30; Seg, 12/12/2015, 14:00-16:30.
+Nome: Rodrigo Bonifácio
+Disponibilidade: Seg, 28/12/2015, 14:00-17:30; Ter, 29/12/2015, 13:00-15:00; Sex, 01/01/2016.
+Nome: Flávio Moura
+Disponibilidade: Qua, 02/03/2016, 10:00-14:00.
