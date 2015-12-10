@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include"leituraPalestra.h"
 #include"leituraPalestrante.h"
+#include"leituraLocal.h"
 #include"listaLocal.h"
 #include"listaPalestra.h"
 #include"listaPalestrante.h"
@@ -64,9 +65,10 @@ int main()
 	/* Grava o calendário em um arquivo de saída */
 	imprimeCalendario(calendario);
 
-return 0;
+	return 0;
 }
 
+/* Verifica a abertura do arquivo */
 void verificaAbertura(FILE *arquivo)
 {
 	if (arquivo == NULL)

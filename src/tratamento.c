@@ -11,12 +11,23 @@
 
 ListaCalendario *criaListaTratada(ArmazenaDispo *listaArquivo1, ArmazenaPalestra  *listaArquivo2)
 {
+	/* Verifica se listaArquivo1 é nula */
+	if (listaArquivo1 == NULL) {
+		printf ("Lista 1 vazia\n");
+		return NULL;
+	}
+	/* Verifica se listaArquivo2 é nula */
+	if (listaArquivo2 == NULL) {
+		printf ("Lista 2 vazia\n");
+		return NULL;
+	}
 	ListaCalendario *nova, *prim = NULL;
 	ArmazenaDispo *tempDispo = listaArquivo1;
 	ArmazenaPalestra *tempPalestra = listaArquivo2;
 	char dispoTemp[1000];
 	int i;
-	
+
+	/* Arrasto = 1 */
 	for (tempDispo = listaArquivo1, tempPalestra = listaArquivo2 ; tempDispo != NULL ; tempDispo = tempDispo->prox, tempPalestra = tempPalestra->prox)
 	{
 		strcpy(dispoTemp, tempDispo->dispo);
@@ -72,6 +83,16 @@ ListaCalendario *criaListaTratada(ArmazenaDispo *listaArquivo1, ArmazenaPalestra
 		}
 	}
 
+	/* Verifica se listaArquivo1 é nula */
+	if (listaArquivo1 == NULL) {
+		printf ("Lista 1 vazia\n");
+		return NULL;
+	}
+	/* Verifica se listaArquivo2 é nula */
+	if (listaArquivo2 == NULL) {
+		printf ("Lista 2 vazia\n");
+		return NULL;
+	}
 	return prim;
 
 }
@@ -92,4 +113,9 @@ int atribuiSemana(char *dia)
 		return 6;
 	else if (!strncmp(dia, "Sab", 3) || strncmp(dia, "Sáb", 3))
 		return 7;
+	/* Verifica se o parâmetro passado é válido */
+	else {
+		printf ("Parametro invalido\n");
+		return -1;
+	}
 }

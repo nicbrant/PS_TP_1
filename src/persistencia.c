@@ -16,6 +16,11 @@ int exibeMenu()
 
 void imprimeMesAno(int mes, int ano, FILE *arquivo)
 {
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
 	int i;
 	fprintf(arquivo, "\n");
 	switch(mes)
@@ -39,9 +44,16 @@ void imprimeMesAno(int mes, int ano, FILE *arquivo)
 		case 12:	fprintf(arquivo, "Dezembro - "); break;
 	}
 	fprintf(arquivo, "Ano: %d\n", ano);
+	/* Arrasto = 1 */
 	for (i=0; i<30;i++)
 		fprintf(arquivo, "*");
 	fprintf(arquivo, "\n");
+
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
 }
 
 void imprimePalestraComLocal(ListaCalendario *l, FILE *arquivo)
@@ -60,17 +72,49 @@ void imprimePalestraSemLocal(ListaCalendario *l, FILE *arquivo)
 
 void imprimeLocal(ListaCalendario *l, FILE *arquivo)
 {
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (l == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
 	if (l->local == NULL)
 			imprimePalestraSemLocal(l, arquivo);
 	else
 			imprimePalestraComLocal(l, arquivo);
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (l == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
 }
 
 void imprimeTodoCalendario(ListaCalendario *c, FILE *arquivo)
 {
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
+
 	ListaCalendario *l;
 	int mesAtual = c->disponibilidade.mes, anoAtual = c->disponibilidade.ano;
 	imprimeMesAno(mesAtual, anoAtual, arquivo);
+	/* Arrasto = 2 */
 	for (l = c; l != NULL; l = l->prox)
 	{
 		if (mesAtual != l->disponibilidade.mes)
@@ -92,10 +136,31 @@ void imprimeTodoCalendario(ListaCalendario *c, FILE *arquivo)
 	printf("O calendário foi gerado. Consulte o arquivo 'calendário' em seu diretório local.\n");
 	getchar();
 	getchar();
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
 }
 
 void imprimeDiaCalendario(ListaCalendario *c, FILE *arquivo)
 {
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
+
 	system("clear");
 	int dia, mes, ano, existe = 0;
 	ListaCalendario *l = c;
@@ -104,8 +169,10 @@ void imprimeDiaCalendario(ListaCalendario *c, FILE *arquivo)
 	scanf(" %d %d %d", &dia, &mes, &ano);
 
 	fprintf(arquivo, "Eventos para o dia %d/%d/%d: \n\n", dia, mes, ano);
+	/* Arrasto = 1 */
 	while (l != NULL && l->disponibilidade.dia != dia && l->disponibilidade.mes != mes && l->disponibilidade.ano != ano)
 		l = l->prox;
+	/* Arrasto = 1 */
 	while (l != NULL && l->disponibilidade.dia == dia && l->disponibilidade.mes == mes && l->disponibilidade.ano == ano)
 	{
 		imprimeLocal(l, arquivo);
@@ -120,27 +187,65 @@ void imprimeDiaCalendario(ListaCalendario *c, FILE *arquivo)
 	printf("O calendário foi gerado. Consulte o arquivo 'calendário' em seu diretório local.\n");
 	getchar();
 	getchar();
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
 }
 
 
 void imprimeCalendarioDeAB(ListaCalendario *c, FILE *arquivo)
 {
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
+
 	system("clear");
 	int anoInicio, mesInicio, m, a;
 	printf("Insira o mês e ano de inicio (mm/aaaa): ");
 	scanf(" %d %d", &mesInicio, &anoInicio);
 
 	ListaCalendario *l = c;
+	/* Arrasto = 1 */
 	while (l->disponibilidade.mes < mesInicio || l->disponibilidade.ano < anoInicio)
 		l = l->prox;
 	system("clear");
 	imprimeTodoCalendario(l, arquivo);
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Arquivo passado nao existe\n");
+		return;
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
 }
 
 void imprimeCalendario(ListaCalendario *c)
 {
 	int opcaoMenu = 0;
-	
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
+	}
+
+	/* Arrasto = 1 */
 	while (opcaoMenu != 4)
 	{
 		opcaoMenu = exibeMenu();
@@ -169,5 +274,10 @@ void imprimeCalendario(ListaCalendario *c)
 		}
 		system("clear");
 	
+	}
+	/* Verifica se a lista é vazia */
+	if (c == NULL) {
+		printf ("Lista vazia\n");
+		return;
 	}
 }

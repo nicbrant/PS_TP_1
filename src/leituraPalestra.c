@@ -11,10 +11,20 @@ ArmazenaPalestra* leArquivo2(FILE *arquivo) {
 	char palavra[1000];
 	ArmazenaPalestra *atual = (ArmazenaPalestra*)malloc(sizeof(ArmazenaPalestra));
 	ArmazenaPalestra *prim = NULL;
+
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Nenhum arquivo foi passado\n");
+		return NULL;
+	}
+	/* Verifica se a variável atual foi alocada */
 	if (atual == NULL) {
-		exit(2017);
+		printf ("Erro na alocacao\n");
+		return NULL;
 	}
 	prim = atual;
+
+	/* Arrasto = 4 */
 	while (fscanf(arquivo, "%s", palavra) != EOF) {
 		if (!strcmp(palavra, "Nome:")) {
 			fscanf(arquivo, "%[^\n]", atual->nomePalestra);
@@ -29,16 +39,19 @@ ArmazenaPalestra* leArquivo2(FILE *arquivo) {
 			fscanf(arquivo, "%[^\n]", atual->local);
 		}
 		else if (!strcmp(palavra, "Duracao:")) {
-			fscanf(arquivo, "%[^\n]", atual->duracao);
+			fscanf(arquivo, "%[^\n]", atual->duracao);			
 			atual->prox = (ArmazenaPalestra*)malloc(sizeof(ArmazenaPalestra));
 			atual = atual->prox;
 			if (atual == NULL)
 				exit(2018);
-		}else{
-			printf("Arquivo \"palestras.txt\" esta com os dados de forma errada.\nFechando o programa.\n");
-			fclose(arquivo);
-			exit(1);
 		}
 	}
+
+	/* Verifica se o arquivo passado é nulo */
+	if (arquivo == NULL) {
+		printf ("Nenhum arquivo foi passado\n");
+		return NULL;
+	}
+
 	return prim;
 }
