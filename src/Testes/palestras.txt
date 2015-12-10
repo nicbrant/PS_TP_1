@@ -1,0 +1,29 @@
+Nome: Programação competitiva
+Palestrante: Guilherme Novaes Ramos
+Tema: Programação competitiva
+Local: Local1
+Duracao: 1:30h
+
+Nome: Informática e sociedade
+Palestrante: Homero Picolo
+Tema: Informática e sociedade
+Local: Local2
+Duracao: 1:00h
+
+Nome: Sistemas distribuidos
+Palestrante: Rodrigo Bonifácio
+Tema: Sistemas distribuidos
+Local: Local3
+Duracao: 2:00h
+
+Nome: Lógica para Cientistas da Computação
+Palestrante: Flávio Moura
+Tema: Lógica para Cientistas da Computação
+Local: Local4
+Duracao: 1:00h
+
+Nome: Programação Python
+Palestrante: Rodrigo Bonifácio
+Tema: Programação Python
+Local: Local5
+Duracao: 2:00h
