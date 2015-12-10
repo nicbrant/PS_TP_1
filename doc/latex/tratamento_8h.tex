@@ -1,0 +1,64 @@
+\hypertarget{tratamento_8h}{}\section{tratamento.\+h File Reference}
+\label{tratamento_8h}\index{tratamento.\+h@{tratamento.\+h}}
+{\ttfamily \#include \char`\"{}leitura\+Palestra.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}leitura\+Palestrante.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lista\+Local.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tratamento\+Local.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdisponibilidade_num}{disponibilidade\+Num}
+\item 
+struct \hyperlink{structlista_calendario}{lista\+Calendario}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structdisponibilidade_num}{disponibilidade\+Num} \hyperlink{tratamento_8h_af779d477c92ad861dee2a119587f3285}{Disponibilidade\+Numerica}
+\item 
+typedef struct \hyperlink{structlista_calendario}{lista\+Calendario} \hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$ \hyperlink{tratamento_8h_a2f8b9a7166fd3578fb9426cfc1ab923e}{cria\+Lista\+Tratada} (\hyperlink{lista_palestrante_8h_a973c259d3d8642df4baeadd00ad64dff}{Armazena\+Dispo} $\ast$lista\+Arquivo1, \hyperlink{lista_palestra_8h_a1790ceba9a8cce56eaa34f5503cba764}{Armazena\+Palestra} $\ast$lista\+Arquivo2)
+\item 
+int \hyperlink{tratamento_8h_afd69fd1971b43ac1d4ab654e4204021e}{atribui\+Semana} (char $\ast$dia)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{tratamento_8h_af779d477c92ad861dee2a119587f3285}{}\index{tratamento.\+h@{tratamento.\+h}!Disponibilidade\+Numerica@{Disponibilidade\+Numerica}}
+\index{Disponibilidade\+Numerica@{Disponibilidade\+Numerica}!tratamento.\+h@{tratamento.\+h}}
+\subsubsection[{Disponibilidade\+Numerica}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf disponibilidade\+Num} {\bf Disponibilidade\+Numerica}}\label{tratamento_8h_af779d477c92ad861dee2a119587f3285}
+\hypertarget{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{}\index{tratamento.\+h@{tratamento.\+h}!Lista\+Calendario@{Lista\+Calendario}}
+\index{Lista\+Calendario@{Lista\+Calendario}!tratamento.\+h@{tratamento.\+h}}
+\subsubsection[{Lista\+Calendario}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf lista\+Calendario} {\bf Lista\+Calendario}}\label{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}
+
+
+\subsection{Function Documentation}
+\hypertarget{tratamento_8h_afd69fd1971b43ac1d4ab654e4204021e}{}\index{tratamento.\+h@{tratamento.\+h}!atribui\+Semana@{atribui\+Semana}}
+\index{atribui\+Semana@{atribui\+Semana}!tratamento.\+h@{tratamento.\+h}}
+\subsubsection[{atribui\+Semana(char $\ast$dia)}]{\setlength{\rightskip}{0pt plus 5cm}int atribui\+Semana (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dia}
+\end{DoxyParamCaption}
+)}\label{tratamento_8h_afd69fd1971b43ac1d4ab654e4204021e}
+\hypertarget{tratamento_8h_a2f8b9a7166fd3578fb9426cfc1ab923e}{}\index{tratamento.\+h@{tratamento.\+h}!cria\+Lista\+Tratada@{cria\+Lista\+Tratada}}
+\index{cria\+Lista\+Tratada@{cria\+Lista\+Tratada}!tratamento.\+h@{tratamento.\+h}}
+\subsubsection[{cria\+Lista\+Tratada(\+Armazena\+Dispo $\ast$lista\+Arquivo1, Armazena\+Palestra $\ast$lista\+Arquivo2)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lista\+Calendario}$\ast$ cria\+Lista\+Tratada (
+\begin{DoxyParamCaption}
+\item[{{\bf Armazena\+Dispo} $\ast$}]{lista\+Arquivo1, }
+\item[{{\bf Armazena\+Palestra} $\ast$}]{lista\+Arquivo2}
+\end{DoxyParamCaption}
+)}\label{tratamento_8h_a2f8b9a7166fd3578fb9426cfc1ab923e}
+Cria lista onde a disponibilidade passa a ser númerica ao invés de uma string, facilitando a manipulação. Mais especificamente, uma lista encadeada do tipo \textquotesingle{}data\+Palestra\textquotesingle{} \textbackslash{} Após a criação da nova lista com disponibidade numérica, destruir a lista anterior \textquotesingle{}l\textquotesingle{}, ou seja, a que ainda guarda a disponibilidade em forma de string. 
+\begin{DoxyParams}{Parameters}
+{\em lista\+Arquivo1} & ponteiro para Armazena\+Dispo sera usada para a criaçao da lista calenderio \\
+\hline
+{\em lista\+Arquivo2} & Ponteiro Para Armazena\+Palestra sera usada para a criaçao da lista calenderio \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uma Struct Lista\+Calendario 
+\end{DoxyReturn}

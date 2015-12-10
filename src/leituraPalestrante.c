@@ -25,6 +25,10 @@ ArmazenaDispo* leArquivo1(FILE *arquivo) {
 			atual = atual->prox;
 			if (atual == NULL)
 				exit(2016);
+		}else{
+			printf("Arquivo \"palestrantes.txt\" esta com os dados de forma errada.\nFechando o programa.\n");
+			fclose(arquivo);
+			exit(1);
 		}
 	}
 	return prim;

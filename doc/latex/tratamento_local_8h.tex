@@ -1,0 +1,62 @@
+\hypertarget{tratamento_local_8h}{}\section{tratamento\+Local.\+h File Reference}
+\label{tratamento_local_8h}\index{tratamento\+Local.\+h@{tratamento\+Local.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lista_local_8h_aefd163bdd3ba8384e6091a1c54ccc54f}{Localidade} $\ast$ \hyperlink{tratamento_local_8h_a352b2de587b746eb91f7a32a09d2778e}{converte\+Local\+Str\+Int} (\hyperlink{lista_local_8h_aadb7a6643d0e396072dca48876cea7cf}{Local\+Str} $\ast$localidade\+Str)
+\item 
+\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$ \hyperlink{tratamento_local_8h_a892882497678c9f6894062cc018e9e31}{aloca\+Local} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calendario, \hyperlink{lista_local_8h_aefd163bdd3ba8384e6091a1c54ccc54f}{Localidade} $\ast$lugar)
+\item 
+int \hyperlink{tratamento_local_8h_afd69fd1971b43ac1d4ab654e4204021e}{atribui\+Semana} (char $\ast$dia)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{tratamento_local_8h_a892882497678c9f6894062cc018e9e31}{}\index{tratamento\+Local.\+h@{tratamento\+Local.\+h}!aloca\+Local@{aloca\+Local}}
+\index{aloca\+Local@{aloca\+Local}!tratamento\+Local.\+h@{tratamento\+Local.\+h}}
+\subsubsection[{aloca\+Local(\+Lista\+Calendario $\ast$calendario, Localidade $\ast$lugar)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lista\+Calendario}$\ast$ aloca\+Local (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{calendario, }
+\item[{{\bf Localidade} $\ast$}]{lugar}
+\end{DoxyParamCaption}
+)}\label{tratamento_local_8h_a892882497678c9f6894062cc018e9e31}
+Aloca ao dia o local da palestra 
+\begin{DoxyParams}{Parameters}
+{\em calendario} & um ponteiro para uma lista calendario que será o destino de uma localidade \\
+\hline
+{\em lugar} & um ponteiro para uma Localidade que será alocada no calendario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uma Struct Lista\+Calendario 
+\end{DoxyReturn}
+\hypertarget{tratamento_local_8h_afd69fd1971b43ac1d4ab654e4204021e}{}\index{tratamento\+Local.\+h@{tratamento\+Local.\+h}!atribui\+Semana@{atribui\+Semana}}
+\index{atribui\+Semana@{atribui\+Semana}!tratamento\+Local.\+h@{tratamento\+Local.\+h}}
+\subsubsection[{atribui\+Semana(char $\ast$dia)}]{\setlength{\rightskip}{0pt plus 5cm}int atribui\+Semana (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dia}
+\end{DoxyParamCaption}
+)}\label{tratamento_local_8h_afd69fd1971b43ac1d4ab654e4204021e}
+atribui uma semana ao dia 
+\begin{DoxyParams}{Parameters}
+{\em dia} & um ponteiro para caracter que será convertido em inteiro para semana \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um inteiro 
+\end{DoxyReturn}
+\hypertarget{tratamento_local_8h_a352b2de587b746eb91f7a32a09d2778e}{}\index{tratamento\+Local.\+h@{tratamento\+Local.\+h}!converte\+Local\+Str\+Int@{converte\+Local\+Str\+Int}}
+\index{converte\+Local\+Str\+Int@{converte\+Local\+Str\+Int}!tratamento\+Local.\+h@{tratamento\+Local.\+h}}
+\subsubsection[{converte\+Local\+Str\+Int(\+Local\+Str $\ast$localidade\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Localidade}$\ast$ converte\+Local\+Str\+Int (
+\begin{DoxyParamCaption}
+\item[{{\bf Local\+Str} $\ast$}]{localidade\+Str}
+\end{DoxyParamCaption}
+)}\label{tratamento_local_8h_a352b2de587b746eb91f7a32a09d2778e}
+converte os dados de um Local\+Str para uma Localidade 
+\begin{DoxyParams}{Parameters}
+{\em localidade\+Str} & um ponteiro para um Local\+Str que será converida no retorno \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uma Struct Localidade 
+\end{DoxyReturn}

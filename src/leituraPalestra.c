@@ -29,11 +29,15 @@ ArmazenaPalestra* leArquivo2(FILE *arquivo) {
 			fscanf(arquivo, "%[^\n]", atual->local);
 		}
 		else if (!strcmp(palavra, "Duracao:")) {
-			fscanf(arquivo, "%[^\n]", atual->duracao);			
+			fscanf(arquivo, "%[^\n]", atual->duracao);
 			atual->prox = (ArmazenaPalestra*)malloc(sizeof(ArmazenaPalestra));
 			atual = atual->prox;
 			if (atual == NULL)
 				exit(2018);
+		}else{
+			printf("Arquivo \"palestras.txt\" esta com os dados de forma errada.\nFechando o programa.\n");
+			fclose(arquivo);
+			exit(1);
 		}
 	}
 	return prim;
