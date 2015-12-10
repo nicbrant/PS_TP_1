@@ -1,0 +1,130 @@
+\hypertarget{calendario_8c}{}\section{calendario.\+c File Reference}
+\label{calendario_8c}\index{calendario.\+c@{calendario.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}calendario.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{calendario_8c_a1256b37583808c835870f69929b8a1e1}{ordena\+Por\+Dia} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calen)
+\item 
+void \hyperlink{calendario_8c_af7b1253fac86c44bb41c00b9c3a5e417}{ordena\+Por\+Mes} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calen)
+\item 
+void \hyperlink{calendario_8c_a70f1522ee5020bd40d644eebe476a1f7}{ordena\+Por\+Ano} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calen)
+\item 
+void \hyperlink{calendario_8c_af4fe088d4c4f66cdc55b8f907ff7d24a}{ordena\+Por\+Hora} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calen)
+\item 
+void \hyperlink{calendario_8c_a308d93f6d9da076aac5762aa11d501b8}{ordena\+Por\+Minuto} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calen)
+\item 
+void \hyperlink{calendario_8c_a2ddfec9bb8175fdbcbb7ce6d1996164a}{ordena\+Lista\+Tratada} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$c)
+\item 
+void \hyperlink{calendario_8c_a3fee05b4c9924bc2689386d699b27592}{swap\+Dados\+Lista} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$l1, \hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$l2)
+\item 
+void \hyperlink{calendario_8c_afc8e1866ef581be76cd2b30d18e62cdd}{copia\+Info\+Lista} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$dest, \hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$orig)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{calendario_8c_afc8e1866ef581be76cd2b30d18e62cdd}{}\index{calendario.\+c@{calendario.\+c}!copia\+Info\+Lista@{copia\+Info\+Lista}}
+\index{copia\+Info\+Lista@{copia\+Info\+Lista}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{copia\+Info\+Lista(\+Lista\+Calendario $\ast$dest, Lista\+Calendario $\ast$orig)}]{\setlength{\rightskip}{0pt plus 5cm}void copia\+Info\+Lista (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{dest, }
+\item[{{\bf Lista\+Calendario} $\ast$}]{orig}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_afc8e1866ef581be76cd2b30d18e62cdd}
+Copia os dados de uma lista calendario para outra 
+\begin{DoxyParams}{Parameters}
+{\em dest} & um ponteiro para uma lista calendario que será o destino \\
+\hline
+{\em orig} & um ponteiro para uma lista calendario que será o origem \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_a2ddfec9bb8175fdbcbb7ce6d1996164a}{}\index{calendario.\+c@{calendario.\+c}!ordena\+Lista\+Tratada@{ordena\+Lista\+Tratada}}
+\index{ordena\+Lista\+Tratada@{ordena\+Lista\+Tratada}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{ordena\+Lista\+Tratada(\+Lista\+Calendario $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void ordena\+Lista\+Tratada (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_a2ddfec9bb8175fdbcbb7ce6d1996164a}
+Ordena a lista em todos os aspectos 
+\begin{DoxyParams}{Parameters}
+{\em c} & um ponteiro para uma lista calendario \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_a70f1522ee5020bd40d644eebe476a1f7}{}\index{calendario.\+c@{calendario.\+c}!ordena\+Por\+Ano@{ordena\+Por\+Ano}}
+\index{ordena\+Por\+Ano@{ordena\+Por\+Ano}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{ordena\+Por\+Ano(\+Lista\+Calendario $\ast$calen)}]{\setlength{\rightskip}{0pt plus 5cm}void ordena\+Por\+Ano (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_a70f1522ee5020bd40d644eebe476a1f7}
+Ordena as datas por ano 
+\begin{DoxyParams}{Parameters}
+{\em c} & um ponteiro para uma lista calendario \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_a1256b37583808c835870f69929b8a1e1}{}\index{calendario.\+c@{calendario.\+c}!ordena\+Por\+Dia@{ordena\+Por\+Dia}}
+\index{ordena\+Por\+Dia@{ordena\+Por\+Dia}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{ordena\+Por\+Dia(\+Lista\+Calendario $\ast$calen)}]{\setlength{\rightskip}{0pt plus 5cm}void ordena\+Por\+Dia (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_a1256b37583808c835870f69929b8a1e1}
+Ordena as datas por dia 
+\begin{DoxyParams}{Parameters}
+{\em c} & um ponteiro para uma lista calendario \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_af4fe088d4c4f66cdc55b8f907ff7d24a}{}\index{calendario.\+c@{calendario.\+c}!ordena\+Por\+Hora@{ordena\+Por\+Hora}}
+\index{ordena\+Por\+Hora@{ordena\+Por\+Hora}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{ordena\+Por\+Hora(\+Lista\+Calendario $\ast$calen)}]{\setlength{\rightskip}{0pt plus 5cm}void ordena\+Por\+Hora (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_af4fe088d4c4f66cdc55b8f907ff7d24a}
+Ordena as horas por horas 
+\begin{DoxyParams}{Parameters}
+{\em c} & um ponteiro para uma lista calendario \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_af7b1253fac86c44bb41c00b9c3a5e417}{}\index{calendario.\+c@{calendario.\+c}!ordena\+Por\+Mes@{ordena\+Por\+Mes}}
+\index{ordena\+Por\+Mes@{ordena\+Por\+Mes}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{ordena\+Por\+Mes(\+Lista\+Calendario $\ast$calen)}]{\setlength{\rightskip}{0pt plus 5cm}void ordena\+Por\+Mes (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_af7b1253fac86c44bb41c00b9c3a5e417}
+Ordena as datas por mes 
+\begin{DoxyParams}{Parameters}
+{\em c} & um ponteiro para uma lista calendario \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_a308d93f6d9da076aac5762aa11d501b8}{}\index{calendario.\+c@{calendario.\+c}!ordena\+Por\+Minuto@{ordena\+Por\+Minuto}}
+\index{ordena\+Por\+Minuto@{ordena\+Por\+Minuto}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{ordena\+Por\+Minuto(\+Lista\+Calendario $\ast$calen)}]{\setlength{\rightskip}{0pt plus 5cm}void ordena\+Por\+Minuto (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_a308d93f6d9da076aac5762aa11d501b8}
+Ordena as horas por minuto 
+\begin{DoxyParams}{Parameters}
+{\em c} & um ponteiro para uma lista calendario \\
+\hline
+\end{DoxyParams}
+\hypertarget{calendario_8c_a3fee05b4c9924bc2689386d699b27592}{}\index{calendario.\+c@{calendario.\+c}!swap\+Dados\+Lista@{swap\+Dados\+Lista}}
+\index{swap\+Dados\+Lista@{swap\+Dados\+Lista}!calendario.\+c@{calendario.\+c}}
+\subsubsection[{swap\+Dados\+Lista(\+Lista\+Calendario $\ast$l1, Lista\+Calendario $\ast$l2)}]{\setlength{\rightskip}{0pt plus 5cm}void swap\+Dados\+Lista (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{l1, }
+\item[{{\bf Lista\+Calendario} $\ast$}]{l2}
+\end{DoxyParamCaption}
+)}\label{calendario_8c_a3fee05b4c9924bc2689386d699b27592}
+troca os dados entre duas listas 
+\begin{DoxyParams}{Parameters}
+{\em l1} & um ponteiro para uma lista calendario que será trocado com l2 \\
+\hline
+{\em l2} & um ponteiro para uma lista calendario que será trocado com l1 \\
+\hline
+\end{DoxyParams}

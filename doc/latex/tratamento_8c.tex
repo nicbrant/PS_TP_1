@@ -1,0 +1,52 @@
+\hypertarget{tratamento_8c}{}\section{tratamento.\+c File Reference}
+\label{tratamento_8c}\index{tratamento.\+c@{tratamento.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}lista\+Palestra.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lista\+Palestrante.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tratamento.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lista\+Local.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$ \hyperlink{tratamento_8c_a2f8b9a7166fd3578fb9426cfc1ab923e}{cria\+Lista\+Tratada} (\hyperlink{lista_palestrante_8h_a973c259d3d8642df4baeadd00ad64dff}{Armazena\+Dispo} $\ast$lista\+Arquivo1, \hyperlink{lista_palestra_8h_a1790ceba9a8cce56eaa34f5503cba764}{Armazena\+Palestra} $\ast$lista\+Arquivo2)
+\item 
+int \hyperlink{tratamento_8c_afd69fd1971b43ac1d4ab654e4204021e}{atribui\+Semana} (char $\ast$dia)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{tratamento_8c_afd69fd1971b43ac1d4ab654e4204021e}{}\index{tratamento.\+c@{tratamento.\+c}!atribui\+Semana@{atribui\+Semana}}
+\index{atribui\+Semana@{atribui\+Semana}!tratamento.\+c@{tratamento.\+c}}
+\subsubsection[{atribui\+Semana(char $\ast$dia)}]{\setlength{\rightskip}{0pt plus 5cm}int atribui\+Semana (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dia}
+\end{DoxyParamCaption}
+)}\label{tratamento_8c_afd69fd1971b43ac1d4ab654e4204021e}
+atribui uma semana ao dia 
+\begin{DoxyParams}{Parameters}
+{\em dia} & um ponteiro para caracter que ser� convertido em inteiro para semana \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um inteiro 
+\end{DoxyReturn}
+\hypertarget{tratamento_8c_a2f8b9a7166fd3578fb9426cfc1ab923e}{}\index{tratamento.\+c@{tratamento.\+c}!cria\+Lista\+Tratada@{cria\+Lista\+Tratada}}
+\index{cria\+Lista\+Tratada@{cria\+Lista\+Tratada}!tratamento.\+c@{tratamento.\+c}}
+\subsubsection[{cria\+Lista\+Tratada(\+Armazena\+Dispo $\ast$lista\+Arquivo1, Armazena\+Palestra $\ast$lista\+Arquivo2)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lista\+Calendario}$\ast$ cria\+Lista\+Tratada (
+\begin{DoxyParamCaption}
+\item[{{\bf Armazena\+Dispo} $\ast$}]{lista\+Arquivo1, }
+\item[{{\bf Armazena\+Palestra} $\ast$}]{lista\+Arquivo2}
+\end{DoxyParamCaption}
+)}\label{tratamento_8c_a2f8b9a7166fd3578fb9426cfc1ab923e}
+Cria lista onde a disponibilidade passa a ser númerica ao invés de uma string, facilitando a manipulação. Mais especificamente, uma lista encadeada do tipo \textquotesingle{}data\+Palestra\textquotesingle{} \textbackslash{} Após a criação da nova lista com disponibidade numérica, destruir a lista anterior \textquotesingle{}l\textquotesingle{}, ou seja, a que ainda guarda a disponibilidade em forma de string. 
+\begin{DoxyParams}{Parameters}
+{\em lista\+Arquivo1} & ponteiro para Armazena\+Dispo sera usada para a criaçao da lista calenderio \\
+\hline
+{\em lista\+Arquivo2} & Ponteiro Para Armazena\+Palestra sera usada para a criaçao da lista calenderio \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uma Struct Lista\+Calendario 
+\end{DoxyReturn}

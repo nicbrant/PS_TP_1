@@ -1,0 +1,46 @@
+\hypertarget{persistencia_8h}{}\section{persistencia.\+h File Reference}
+\label{persistencia_8h}\index{persistencia.\+h@{persistencia.\+h}}
+{\ttfamily \#include \char`\"{}tratamento.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{persistencia_8h_ab8382fa1c39e42d74f9cf1233bdd6588}{imprime\+Calendario} (\hyperlink{tratamento_8h_a34a863322607bb71bd46d6b05e41869b}{Lista\+Calendario} $\ast$calendario, F\+I\+L\+E $\ast$arquivo\+Saida)
+\item 
+int \hyperlink{persistencia_8h_a32a321aeba1245a5c74a08afa5bfc2b2}{alterna\+Meses} (int mes, int ano)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{persistencia_8h_a32a321aeba1245a5c74a08afa5bfc2b2}{}\index{persistencia.\+h@{persistencia.\+h}!alterna\+Meses@{alterna\+Meses}}
+\index{alterna\+Meses@{alterna\+Meses}!persistencia.\+h@{persistencia.\+h}}
+\subsubsection[{alterna\+Meses(int mes, int ano)}]{\setlength{\rightskip}{0pt plus 5cm}int alterna\+Meses (
+\begin{DoxyParamCaption}
+\item[{int}]{mes, }
+\item[{int}]{ano}
+\end{DoxyParamCaption}
+)}\label{persistencia_8h_a32a321aeba1245a5c74a08afa5bfc2b2}
+Algoritmo que descobre a quantidade de dias do mês, lembrando que fevereiro alterna entre 28 e 29, caso o ano seja não bissexto ou bissexto, respectivamente. 
+\begin{DoxyParams}{Parameters}
+{\em mes} & inteiro sera usado para saber quantos dias tem o mes \\
+\hline
+{\em ano} & inteiro sera usado para saber quantos dias tem o mes naquele ano \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+um inteiro 
+\end{DoxyReturn}
+\hypertarget{persistencia_8h_ab8382fa1c39e42d74f9cf1233bdd6588}{}\index{persistencia.\+h@{persistencia.\+h}!imprime\+Calendario@{imprime\+Calendario}}
+\index{imprime\+Calendario@{imprime\+Calendario}!persistencia.\+h@{persistencia.\+h}}
+\subsubsection[{imprime\+Calendario(\+Lista\+Calendario $\ast$calendario, F\+I\+L\+E $\ast$arquivo\+Saida)}]{\setlength{\rightskip}{0pt plus 5cm}void imprime\+Calendario (
+\begin{DoxyParamCaption}
+\item[{{\bf Lista\+Calendario} $\ast$}]{calendario, }
+\item[{F\+I\+L\+E $\ast$}]{arquivo\+Saida}
+\end{DoxyParamCaption}
+)}\label{persistencia_8h_ab8382fa1c39e42d74f9cf1233bdd6588}
+Imprime os dados da lista do tipo \textquotesingle{}\hyperlink{structlista_calendario}{lista\+Calendario}\textquotesingle{} em um arquivo com a formatação necessária. 
+\begin{DoxyParams}{Parameters}
+{\em calendario} & ponteiro para Lista\+Calendario sera usada como fonte para a criação do calendario \\
+\hline
+{\em arquivo\+Saida} & Ponteiro Para um arquivo sera usado como destino do calendario \\
+\hline
+\end{DoxyParams}
