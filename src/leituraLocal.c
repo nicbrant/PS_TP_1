@@ -34,3 +34,7 @@ LocalStr* leArquivoLocal(FILE *arquivo)
 	}
 	return prim;
 }
+
+int ListaLocalVazia (LocalStr* lista) {
+	return (lista == NULL);
+}

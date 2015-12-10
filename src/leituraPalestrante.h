@@ -13,7 +13,7 @@ typedef struct armazenaDispo ArmazenaDispo;
 * numa lista do tipo 'ArmazenaDispo'
 */
 ArmazenaDispo* leArquivo1(FILE *arquivo);
-
+int ListaPalestrantesVazia (ArmazenaDispo *lista);
 void desalocaListaPalestrantes(ArmazenaDispo *lista);
 
 #endif

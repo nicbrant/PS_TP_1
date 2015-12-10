@@ -42,7 +42,6 @@ typedef struct listaCalendario ListaCalendario;
  */
 
 ListaCalendario *criaListaTratada(ArmazenaDispo *listaArquivo1, ArmazenaPalestra  *listaArquivo2);
-
 int atribuiSemana(char *dia);
 
 #endif

@@ -6,5 +6,6 @@
 *@return Uma Struct LocalStr
 */
 LocalStr* leArquivoLocal(FILE *arquivo);
+int ListaLocalVazia (LocalStr *lista);
 
 #endif

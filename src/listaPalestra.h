@@ -16,5 +16,6 @@ typedef struct armazenaPalestra ArmazenaPalestra;
 *@param lista ponteiro para ArmazenaPalestra que sera desalocado
 */
 void desalocaListaPalestras(ArmazenaPalestra *lista);
+int ListaPalestrasVazia (ArmazenaPalestra *lista);
 
 #endif

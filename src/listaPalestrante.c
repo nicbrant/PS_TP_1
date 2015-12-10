@@ -14,3 +14,6 @@ return;
 	free(lista);
 }
 
+int ListaPalestrantesVazia (ArmazenaDispo *lista) {
+	return (lista == NULL);
+}

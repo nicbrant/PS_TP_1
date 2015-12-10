@@ -13,3 +13,7 @@ return;
 	}
 	free(lista);
 }
+
+int ListaPalestrasVazia (ArmazenaPalestra *lista) {
+	return (lista == NULL);
+}
