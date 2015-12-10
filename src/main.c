@@ -68,7 +68,6 @@ int main()
 	return 0;
 }
 
-/* Verifica a abertura do arquivo */
 void verificaAbertura(FILE *arquivo)
 {
 	if (arquivo == NULL)

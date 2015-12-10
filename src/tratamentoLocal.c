@@ -22,28 +22,18 @@ int atribuiSemana2(char *dia)
 		return 6;
 	else if (!strncmp(dia, "Sab", 3) || strncmp(dia, "Sáb", 3))
 		return 7;
-	/* Verifica se o parâmetro passado é válido */
-	else {
-		printf ("Parametro invalido\n");
-		return -1;
-	}
 }
 
 /*Retorna lista encadeada com a localidade tratada*/
 Localidade *converteLocalStrInt(LocalStr *localidadeStr)
 {
-	/* Verifica se localidade é nula */
-	if (localidadeStr == NULL) {
-		printf ("Parametro vazio\n");
-		return NULL;
-	}
 	Localidade *nova = NULL, *prim = NULL;
 	LocalStr *t = NULL;
 	char dispoTemp[200];
 	int i;
 
 	/* Exemplo de disponibilidade: Qui, 03/09/2015, 07:00-09:30; Seg, 00/10/2015, 14:00-16:30 */
-	/* Arrasto = 1 */
+
 	for (t = localidadeStr; t != NULL; t = t->prox)
 	{
 		strcpy(dispoTemp, t->dispo);
@@ -96,18 +86,13 @@ Localidade *converteLocalStrInt(LocalStr *localidadeStr)
 	}
 	/* Libera a lista LocalStr em formato de string */
 	t = NULL;
-	/* Arrasto = 1 */
 	while (localidadeStr != NULL)
 	{
 		t = localidadeStr->prox;
 		free(localidadeStr);
 		localidadeStr = t;
 	}
-	/* Verifica se localidade é nula */
-	if (localidadeStr == NULL) {
-		printf ("Parametro vazio\n");
-		return NULL;
-	}
+
 	return prim;
 }
 
@@ -117,20 +102,9 @@ que se encaixe nas especificações pedidas, o campo 'local' de ListaCalendario
 irá apontar para o local */
 ListaCalendario* alocaLocal(ListaCalendario *calendario, Localidade *lugar)
 {
-	/* Verifica se calendario é nulo */
-	if (calendario == NULL) {
-		printf ("ListaCalendario vazia\n");
-		return NULL;
-	}
-	/* Verifica se lugar é nulo */
-	if (lugar == NULL) {
-		printf ("Localidade nula\n");
-		return NULL;
-	}
 	ListaCalendario *calenTemp = NULL;
 	Localidade *localTemp = NULL;
 
-	/* Arrastp = 1 */
 	for (calenTemp = calendario; calenTemp != NULL; calenTemp = calenTemp->prox)
 		calenTemp->local = NULL;
 
@@ -158,26 +132,15 @@ ListaCalendario* alocaLocal(ListaCalendario *calendario, Localidade *lugar)
 		if (calenTemp->local == NULL)
 			calenTemp->existeLocal = 0;
 	}
-	/* Verifica se calendario é nulo */
-	if (calendario == NULL) {
-		printf ("ListaCalendario vazia\n");
-		return NULL;
-	}
-	/* Verifica se lugar é nulo */
-	if (lugar == NULL) {
-		printf ("Localidade nula\n");
-		return NULL;
-	}
+
 	return calendario;
 }
 
-/* Verifica se localidade é vazia */
 int locaisVazios(Localidade *local)
 {
 	return local == NULL;
 }
 
-/* Verifica se ListaCalendario é vazia */
 int calendarioVazio(ListaCalendario *c)
 {
 	return c == NULL;
