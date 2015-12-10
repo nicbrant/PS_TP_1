@@ -7,7 +7,7 @@ LocalStr* leArquivoLocal(FILE *arquivo)
 	char palavra[1000];
 	LocalStr *atual = (LocalStr*)malloc(sizeof(LocalStr));
 	LocalStr *prim = NULL;
-	if (atual == NULL) 
+	if (atual == NULL)
 	{
 		exit(1);
 	}
@@ -25,16 +25,16 @@ LocalStr* leArquivoLocal(FILE *arquivo)
 			fscanf(arquivo, "%[^\n]", atual->dispo);
 
 			if (feof(arquivo))
-				break;		
+				break;
 			atual->prox = (LocalStr*)malloc(sizeof(LocalStr));
 			atual = atual->prox;
 			if (atual == NULL)
 				exit(1);
+		}else{
+			printf("Arquivo \"localidade.txt\" esta com os dados de forma errada.\nFechando o programa.\n");
+			fclose(arquivo);
+			exit(1);
 		}
 	}
 	return prim;
-}
-
-int ListaLocalVazia (LocalStr* lista) {
-	return (lista == NULL);
 }
